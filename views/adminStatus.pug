@@ -1,5 +1,13 @@
 extends layout 
 
+block header
+  div(class='header')
+    h1
+      a(href=(admin ? '/admin' : '/')) My Blog
+    div(class='adminTools')
+      div(class='adminTool')
+        a(href='/') Back To Home
+
 block content
   div(class='postCard')
     h1= title 

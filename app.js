@@ -2,18 +2,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const compression = require('compression');
 const helmet = require('helmet');
 
 const adminRoutes = require('./routes/admin');
 const userRoutes = require('./routes/view');
-
-require('dotenv').config();
-mongoose.connect(process.env.mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB Connection Error: '));
 
 var app = express();
 app.use(helmet());

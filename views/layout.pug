@@ -11,8 +11,6 @@ html
           a(href=(admin ? '/admin' : '/')) My Blog
         div(class='adminTools')
           div(class='adminTool')
-            if admin
-              a(href='/admin/status') Disable Admin Tools
-            else
-              a(href='/admin/status') Enable Admin Tools
+            a(href='/') Back To Home
     block content
+
